@@ -18,6 +18,10 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: 18
+            - name: Use packaged version of yarn
+              run: corepack enable
+            - run: corepack yarn
+
             - name: Run install
               uses: borales/actions-yarn@v4
               with:
