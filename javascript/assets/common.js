@@ -35,7 +35,8 @@ function CheckIfIPAddress(input) {
 
 		if (input.value == "0.0.0.0") {
 			return false;
-		} else if (input.value == "255.255.255.255") {
+		}
+		if (input.value == "255.255.255.255") {
 			return false;
 		}
 
@@ -89,7 +90,7 @@ function CheckIfIPAddress(input) {
 }
 
 function VerifyNumberBounds(input) {
-	var temp_input_value;
+	let temp_input_value;
 	temp_input_value = parseFloat(input);
 
 	if (temp_input_value > Number.MAX_VALUE) {
@@ -104,13 +105,13 @@ function VerifyNumberBounds(input) {
 }
 
 function VerifyNumeric(input) {
-	var valid = "0123456789.-";
-	var temp;
+	let valid = "0123456789.-";
+	let temp;
 
-	for (var i = 0; i < input.length; i++) {
-		temp = "" + input.substring(i, i + 1);
+	for (let i = 0; i < input.length; i++) {
+		temp = `${input.substring(i, i + 1)}`;
 
-		if (valid.indexOf(temp) == "-1") return false;
+		if ("-1" == valid.indexOf(temp)) return false;
 	}
 
 	if (false == VerifyNumberBounds(input)) return false;
@@ -119,13 +120,13 @@ function VerifyNumeric(input) {
 }
 
 function VerifyWholeNumeric(input) {
-	var valid = "0123456789-";
-	var temp;
+	let valid = "0123456789-";
+	let temp;
 
-	for (var i = 0; i < input.length; i++) {
-		temp = "" + input.substring(i, i + 1);
+	for (let i = 0; i < input.length; i++) {
+		temp = `${input.substring(i, i + 1)}`;
 
-		if (valid.indexOf(temp) == "-1") return false;
+		if ("-1" == valid.indexOf(temp)) return false;
 	}
 
 	if (false == VerifyNumberBounds(input)) return false;
@@ -138,7 +139,7 @@ function VerifyDecimalNumber(input) {
 		return false;
 	}
 
-	var numberFloat = parseFloat(input, 10);
+	let numberFloat = parseFloat(input, 10);
 
 	if (isNaN(numberFloat)) {
 		return false;
@@ -154,7 +155,7 @@ function VerifyPositiveDecimalNumber(input) {
 		return false;
 	}
 
-	var numberUFloat = parseFloat(input, 10);
+	let numberUFloat = parseFloat(input, 10);
 
 	if (numberUFloat < 0 || isNaN(numberUFloat)) {
 		return false;
@@ -170,7 +171,7 @@ function VerifyWholeNumber(input) {
 		return false;
 	}
 
-	var numberInt = parseInt(input, 10);
+	let numberInt = parseInt(input, 10);
 
 	if (isNaN(numberInt)) {
 		return false;
@@ -186,7 +187,7 @@ function VerifyPositiveWholeNumber(input) {
 		return false;
 	}
 
-	var numberUInt = parseInt(input, 10);
+	let numberUInt = parseInt(input, 10);
 
 	if (numberUInt < 0 || isNaN(numberUInt)) {
 		return false;
@@ -202,7 +203,7 @@ function VerifyNegativeWholeNumber(input) {
 		return false;
 	}
 
-	var numberUInt = parseInt(input, 10);
+	let numberUInt = parseInt(input, 10);
 
 	if (numberUInt > 0 || isNaN(numberUInt)) {
 		return false;
@@ -218,7 +219,7 @@ function VerifyPortNumber(input) {
 		return false;
 	}
 
-	var numberUInt = parseInt(input, 10);
+	let numberUInt = parseInt(input, 10);
 
 	if (numberUInt <= 0 || numberUInt > 65535) {
 		return false;
@@ -230,14 +231,14 @@ function VerifyPortNumber(input) {
 }
 
 function VerifyASCIIPrintableText(input) {
-	var valid = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"; //TODO special characters are not currently supported
+	let valid = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"; //TODO special characters are not currently supported
 	//var valid = "0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-	var temp;
+	let temp;
 
-	for (var i = 0; i < input.length; i++) {
-		temp = "" + input.substring(i, i + 1);
+	for (let i = 0; i < input.length; i++) {
+		temp = `${input.substring(i, i + 1)}`;
 
-		if (valid.indexOf(temp) == "-1") return false;
+		if ("-1" == valid.indexOf(temp)) return false;
 	}
 
 	return true;
