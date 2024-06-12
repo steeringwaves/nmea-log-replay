@@ -20,7 +20,6 @@ app.on("ready", function () {
 	mainWindow = new BrowserWindow({
 		width: 700,
 		height: 750,
-		icons: path.join(__dirname, "assets/icons/png/icon.png"),
 		webPreferences: {
 			nodeIntegration: true,
 			contextIsolation: false,
