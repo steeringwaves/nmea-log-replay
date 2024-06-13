@@ -24,6 +24,7 @@
 	"packageManager": "yarn@4.3.0",
 	"dependencies": {
 		"@electron/remote": "^2.1.2",
+		"electron-updater": "^6.2.1",
 		"net": "^1.0.2"
 	},
 	"devDependencies": {

@@ -1,6 +1,6 @@
 const { app, BrowserWindow } = require("electron");
 const remoteMain = require("@electron/remote/main");
-var path = require("path");
+const { autoUpdater } = require("electron-updater");
 
 remoteMain.initialize();
 
@@ -16,6 +16,7 @@ app.on("window-all-closed", function () {
 // This method will be called when Electron has done everything
 // initialization and ready for creating browser windows.
 app.on("ready", function () {
+	autoUpdater.checkForUpdatesAndNotify();
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
 		width: 700,
